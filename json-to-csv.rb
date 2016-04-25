@@ -26,7 +26,7 @@ File.open(File.expand_path(filepath), 'r') do |f|
   begin
     users = JSON.parse f.read
   rescue
-    exit_gently :parse_error unless users.is_a? Array
+    exit_gently :parse_error
   end
 
   exit_gently :array unless users.is_a? Array
